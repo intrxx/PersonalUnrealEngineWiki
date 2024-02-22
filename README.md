@@ -19,7 +19,7 @@ Ability System Component is typicaly constructed in the OwnerActor's contructor 
 
 ```c++
   AbilitySystemComponent = CreateDefaultSubobject<UObsidianAbilitySystemComponent>(TEXT("AbilitySystemComponent"));
-	AbilitySystemComponent->SetIsReplicated(true);
+  AbilitySystemComponent->SetIsReplicated(true);
   AbilitySystemComponent->SetReplicationMode(EGameplayEffectReplicationMode::OneOfThreeReplicationModes);
 ```
 This function takes in EGameplayEffectReplicationMode enum class which is well explain by the below tabel.
