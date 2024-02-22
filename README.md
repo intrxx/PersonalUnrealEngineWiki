@@ -17,8 +17,15 @@ Collection of useful information about Unreal Engine game creation. I will (hope
 Ability System Component's Replication Mode can be set right after its creation in the constructor like this:
 
 ```c++
-  ObsidianAbilitySystemComponent->SetReplicationMode(EGameplayEffectReplicationMode);
+  AbilitySystemComponent->SetReplicationMode(EGameplayEffectReplicationMode);
 ```
+This function takes in EGameplayEffectReplicationMode enum class which is well explain by the below tabel.
+
+| Replication Mode | Use Case                              | Description                                                                                                               |
+| -----------      | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| Minimal          | Multiplayer; AI Controlled Actors     | Gameplay Effects are **not** replicated. Gameplay Cues and Gameplay Tags are replicated to all clients                    |
+| Mixed            | Multiplayer; Player Controlled Actors | Gameplay Effects are replicated to the owning client only. Gameplay Cues and Gameplay Tags are replicated to all clients. |  
+| Full             | Single Player                         | Every Gameplay Effect is replicated to every client.                                                                      |
 
 
 
