@@ -5,7 +5,7 @@ Collection of useful information about Unreal Engine game creation. I will (hope
 <a name="table-of-contents"></a>
 ## Table of Contents
 
-> 1. [Gameplay Ability System](#gas) \n
+> 1. [Gameplay Ability System](#gas) \
 >    &nbsp;1.1 [GAS's Replication Modes](#gas-modes)
 
 <a name="gas"></a>
