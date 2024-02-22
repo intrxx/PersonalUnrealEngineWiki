@@ -14,10 +14,11 @@ Collection of useful information about Unreal Engine game creation. I will (hope
 <a name="gas-modes"></a>
 ### 1.1 GAS's Replication Modes
 
-Ability System Component's Replication Mode can be set right after its creation in the constructor like this:
+The ASC defines three replication modes for replicating Gameplay Effects, Gameplay Tags and Gameplay Cues
+Replication Mode can be set right after its creation in the constructor like this:
 
 ```c++
-  AbilitySystemComponent->SetReplicationMode(EGameplayEffectReplicationMode);
+  AbilitySystemComponent->SetReplicationMode(EGameplayEffectReplicationMode::OneOfThreeReplicationModes);
 ```
 This function takes in EGameplayEffectReplicationMode enum class which is well explain by the below tabel.
 
