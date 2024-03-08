@@ -12,7 +12,7 @@ Collection of useful information about Unreal Engine game creation. I will (hope
 ## 1. Gameplay Ability System
 
 <a name="gas-modes"></a>
-### 1.1 GAS's Replication Modes
+### 1.1. GAS's Replication Modes
 
 The ASC defines three replication modes for replicating Gameplay Effects, Gameplay Tags and Gameplay Cues. 
 Ability System Component is typicaly constructed in the OwnerActor's contructor and explicitly marked as replicated, Replication Mode can be set right after its creation like this:
