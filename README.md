@@ -37,10 +37,10 @@ This function takes in EGameplayEffectReplicationMode enum class which is well e
 Every Attribute has a base value and a current value (this should propably has it's own explenation).
  
 In the Gameplay Ability System there are 3 Gameplay Effect Duration Policies:
-- Instant - affects the base value and changes it "permanently",
-- Infinite - affects the current value and can be undone when the effect is removed (must be done 'manually'),
-- Has Duration (non-periodic) - affect the current value and are removed after given time, meaning the current value goes back to the original value before the gameplay effect,
-- Has Duration (periodic) - 
+- **Instant** - affects the base value and changes it "permanently",
+- **Infinite** - affects the current value and can be undone when the effect is removed (must be done 'manually'),
+- **Has Duration** - affect the current value and are removed after given time, meaning the current value goes back to the original value before the gameplay effect,
+- **Has Duration/Infinite (Periodic)** - affect the base value like instant effect - HasDuration/Infinite duration policy becomes Periodic after setting it's "Period" to be a non-zero value
 
 
 
