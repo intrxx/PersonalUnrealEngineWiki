@@ -6,14 +6,19 @@ Collection of useful information about Unreal Engine game creation. I will (hope
 ## Table of Contents
 
 > 1. [Gameplay Ability System](#gas) \
->    &nbsp;1.1 [GAS's Replication Modes](#gas-modes) \
->    &nbsp;1.2 [GAS's Gameplay Effect Duration Policies](#gas-gedurationpolicies) 
+>    &nbsp;1.1 [Ability System Component](#asc) \
+>    &nbsp;&nbsp;1.1.1 [GAS's Replication Modes](#gas-modes) \
+>    &nbsp;1.2 [Gameplay Effects](#ge) \
+>    &nbsp;&nbsp;1.2.1 [GAS's Gameplay Effect Duration Policies](#gas-gedurationpolicies) 
 
 <a name="gas"></a>
 ## 1. Gameplay Ability System
 
+<a name="asc"></a>
+### 1.1 Ability System Component
+
 <a name="gas-modes"></a>
-### 1.1 GAS's Replication Modes
+#### 1.1.1 GAS's Replication Modes
 
 The ASC defines three replication modes for replicating Gameplay Effects, Gameplay Tags and Gameplay Cues. 
 Ability System Component is typicaly constructed in the OwnerActor's contructor and explicitly marked as replicated, Replication Mode can be set right after its creation like this:
@@ -31,8 +36,11 @@ This function takes in EGameplayEffectReplicationMode enum class which is well e
 | Mixed            | Multiplayer; Player Controlled Actors | Gameplay Effects are replicated to the owning client only. Gameplay Cues and Gameplay Tags are replicated to all clients. |  
 | Full             | Single Player                         | Every Gameplay Effect is replicated to every client.                                                                      |
 
+<a name="ge"></a>
+### 1.2 Gameplay Effects
+
 <a name="gas-gedurationpolicies"></a>
-### 1.2 GAS's Gameplay Effect Duration Policies
+#### 1.2.1 GAS's Gameplay Effect Duration Policies
 
 Every Attribute has a base value and a current value (this should propably has it's own explenation).
  
