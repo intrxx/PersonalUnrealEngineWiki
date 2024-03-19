@@ -9,7 +9,7 @@ Collection of useful information about Unreal Engine game creation. I will (hope
 >    &nbsp;1.1 [Ability System Component](#asc) \
 >    &nbsp;&nbsp;1.1.1 [GAS's Replication Modes](#gas-modes) \
 >    &nbsp;1.2 [Gameplay Effects](#ge) \
->    &nbsp;&nbsp;1.2.1 [GAS's Gameplay Effect Duration Policies](#gas-gedurationpolicies) 
+>    &nbsp;&nbsp;1.2.1 [Gameplay Effect Duration Policies](#gas-gedurationpolicies) 
 
 <a name="gas"></a>
 ## 1. Gameplay Ability System
@@ -40,7 +40,7 @@ This function takes in EGameplayEffectReplicationMode enum class which is well e
 ### 1.2 Gameplay Effects
 
 <a name="gas-gedurationpolicies"></a>
-#### 1.2.1 GAS's Gameplay Effect Duration Policies
+#### 1.2.1 Gameplay Effect Duration Policies
 
 Every Attribute has a base value and a current value (this should propably has it's own explenation).
  
