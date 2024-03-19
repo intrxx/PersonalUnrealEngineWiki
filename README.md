@@ -62,6 +62,8 @@ Execute Periodic Effect on Application - we can check this checkbox to have the 
 
 The Gameplay Effect has a stacking secion where we can choose the stacking type of a given gameplay effect. If a stacking type is set to **None** all gameplay effects of this type when applied are treated as individual gameplay effects.
 
-**Agregate by Source** - means that this stack limit count is inforced per source. If we have one source that applies a gameplay effect (with stack limit count set as 2) - if it applies it to the target the stack count is aggregated by the source if it applies another one the second one is aggregated and we reach the limit.
+**Aggregate by Source** - means that this stack limit count is enforced per source. If we have one source that applies a gameplay effect (with stack limit count set as 2) - if it applies it to the target the stack count is aggregated by the source if it applies another one the second one is aggregated and we reach the limit. Now if we have another source (source_v2) with the same gameplay effect then source_v2 can apply additional 2 stacks until it reaches it's own limit.
+
+**Aggregate by Target** - means that this stack limit count is enforced per target. If some source applies the effect (with a stack limit count set to 1) it gets added to the stack count of the target so if any other source tries to apply the same effect it will fail as the stack limit count is reached.
 
 
