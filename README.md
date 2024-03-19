@@ -60,4 +60,6 @@ Execute Periodic Effect on Application - we can check this checkbox to have the 
 <a name="ge-stacking"></a>
 #### 1.2.3 Effect Stacking
 
+The Gameplay Effect has a stacking secion where we can choose the stacking type of a given gameplay effect. If a stacking type is set to **None** all gameplay effects of this type when applied are treated as individual gameplay effects.
+
 
