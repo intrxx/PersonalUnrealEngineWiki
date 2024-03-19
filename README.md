@@ -66,4 +66,6 @@ The Gameplay Effect has a stacking secion where we can choose the stacking type 
 
 **Aggregate by Target** - means that this stack limit count is enforced per target. If some source applies the effect (with a stack limit count set to 1) it gets added to the stack count of the target so if any other source tries to apply the same effect it will fail as the stack limit count is reached.
 
+Sources and Targets are simply Ability System Components applying or reciving the gameplay effects.
+
 
