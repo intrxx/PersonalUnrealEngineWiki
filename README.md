@@ -42,6 +42,6 @@ In the Gameplay Ability System there are 3 Gameplay Effect Duration Policies:
 - **Has Duration** - affect the current value and are removed after given time, meaning the current value goes back to the original value before the gameplay effect,
 - **Has Duration/Infinite (Periodic)** - affect the base value like instant effect - HasDuration/Infinite duration policy becomes Periodic after setting it's "Period" to be a non-zero value. Pretty much same thing here if we change the "Has Duration" into periodic it will remove itself after a given time (Duration Magnitude) and if we changes the "Infinite" one to periodic we will need to remove it 'manually'.
 
-Execute Periodic Effect on Application - we can check this checkbox to have the gameplay effect "start" righ away after applying it to the ASC.
+Execute Periodic Effect on Application - we can check this checkbox to have the gameplay effect "start" righ away after applying it to the ASC. A thing to note here, if we decide to apply it on application it will execute one aditional time leading to some missunderstandings and errors.
 
 
