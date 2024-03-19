@@ -34,12 +34,13 @@ This function takes in EGameplayEffectReplicationMode enum class which is well e
 <a name="gas-gedurationpolicies"></a>
 ### 1.2 GAS's Gameplay Effect Duration Policies
 
-In Gameplay Ability System there are 3 Gameplay Effect Duration Policies:
-- Instant
-- Infinite
-- Has Duration
+Every Attribute has a base value and a current value (this should propably has it's own explenation).
+ 
+In the Gameplay Ability System there are 3 Gameplay Effect Duration Policies:
+- Instant - affects the base value and changes it "permanently",
+- Infinite - affects the current value and can be undone when the effect is removed (must be done 'manually'),
+- Has Duration (non-periodic) - affect the current value and are removed after given time, meaning the current value goes back to the original value before the gameplay effect,
+- Has Duration (periodic) - 
 
-Every Attribute has a base value and a current value.
 
-Temporary effects affect the current value and are removed after given time, meaning the current value goes back to the original value before the gameplay effect.
 
