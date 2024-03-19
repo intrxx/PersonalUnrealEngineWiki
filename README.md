@@ -6,8 +6,8 @@ Collection of useful information about Unreal Engine game creation. I will (hope
 ## Table of Contents
 
 > 1. [Gameplay Ability System](#gas) \
->    &nbsp;1.1 [GAS's Replication Modes](#gas-modes)
->    &nbsp;1.2 [GAS's Gameplay Effect Duration Policies](#gas-gedurationpolicies)
+>    &nbsp;1.1 [GAS's Replication Modes](#gas-modes) \
+>    &nbsp;1.2 [GAS's Gameplay Effect Duration Policies](#gas-gedurationpolicies) \
 
 <a name="gas"></a>
 ## 1. Gameplay Ability System
