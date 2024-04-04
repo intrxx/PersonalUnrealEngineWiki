@@ -74,12 +74,12 @@ Sources and Targets are simply Ability System Components applying or reciving th
 - **Never Refreash** - when applying 3 gameplay effects in some amount of time the duration of the first one is the final duration and after it expiries the gameplay effect ends, 
 - **Refreash on successful aplication** - when applying 3 gameplay effects in some amount of time the duration gets refreashed after applying individual gameplay effects.
 
-**Stack Period Refreash Policy** -  esencially the same as the one above bu applying to period
+**Stack Period Refreash Policy** -  esencially the same as the one above bu applying to period.
 
-**Stack expariation policy** - Policy on how to handle duration expiring on this gameplay effect
-- **Clear entire stack** - we can just clear the whole stack and end the gameplay effect
-- **Remove single stack and refreash duration** - we can just remove 1 stack and let the duration run again
-- **Refresh duration** - if set to this, the gameplay effect becomes infinite (we can manually respond to OnStackCountChange)
+**Stack expariation policy** - Policy on how to handle duration expiring on this gameplay effect:
+- **Clear entire stack** - we can just clear the whole stack and end the gameplay effect,
+- **Remove single stack and refreash duration** - we can just remove 1 stack and let the duration run again,
+- **Refresh duration** - if set to this, the gameplay effect becomes infinite (we can manually respond to OnStackCountChange).
 
 
 
