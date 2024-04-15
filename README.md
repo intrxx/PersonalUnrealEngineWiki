@@ -11,7 +11,8 @@ Collection of useful information about Unreal Engine game creation. I will (hope
 >    &nbsp;1.2 [Gameplay Effects](#ge) \
 >    &nbsp;&nbsp;1.2.1 [Gameplay Effect Duration Policies](#gas-gedurationpolicies)  \
 >    &nbsp;&nbsp;1.2.2 [Gameplay Effect's Params](#ge-params) \
->    &nbsp;&nbsp;1.2.3 [Effect Stacking](#ge-stacking) 
+>    &nbsp;&nbsp;1.2.3 [Effect Stacking](#ge-stacking) \
+>    &nbsp;&nbsp;1.2.4 [Modifier Order of Operations](#ge-orderofop) 
 
 <a name="gas"></a>
 ## 1. Gameplay Ability System
@@ -80,6 +81,9 @@ Sources and Targets are simply Ability System Components applying or reciving th
 - **Clear entire stack** - we can just clear the whole stack and end the gameplay effect,
 - **Remove single stack and refreash duration** - we can just remove 1 stack and let the duration run again,
 - **Refresh duration** - if set to this, the gameplay effect becomes infinite (we can manually respond to OnStackCountChange).
+
+<a name="ge-orderofop"></a>
+#### 1.2.3 Modifier Order of Operations
 
 
 
