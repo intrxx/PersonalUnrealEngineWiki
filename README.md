@@ -85,5 +85,11 @@ Sources and Targets are simply Ability System Components applying or reciving th
 <a name="ge-orderofop"></a>
 #### 1.2.3 Modifier Order of Operations
 
+When it comes to the regular Magnitude Magnitude calculation it is fairly simple. The Modifier Op does not matter, only the order of operations, so i we have a Health attribute and a Gameplay Effect that modify Health value by:
+- Adding a moddifier magnitude [Additive_1],
+- then multiplaying by modifier magnitude [Multiplicative_1],
+- and then adding again [Additive_2],
+this will execute in this exact orger of operations:  Health = Health + [Additive_1] = NewHealth, NewHealth = NewHealth * [Multiplicative_1] = NewerHealth, NewerHealth = NewerHealth + [Additive_2] = FinalResult
+
 
 
