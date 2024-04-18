@@ -90,7 +90,17 @@ When it comes to the regular Magnitude Magnitude calculation it is fairly simple
 - then multiplaying by modifier magnitude [Multiplicative_1],
 - and then adding again [Additive_2],
   
-this will execute in this exact order of operations:  Health = Health + [Additive_1] = NewHealth, NewHealth = NewHealth * [Multiplicative_1] = NewerHealth, NewerHealth = NewerHealth + [Additive_2] = FinalResult
+this will execute in this exact order of operations:  
+- Health = Health + [Additive_1] = NewHealth,
+- NewHealth = NewHealth * [Multiplicative_1] = NewerHealth,
+- NewerHealth = NewerHealth + [Additive_2] = FinalResult.
+
+If we are calculating Attribute Based Modifier we come across few options:
+- Coefficient,
+- Pre Multiply Additive Value,
+- Post Multiply Additive Value.
+
+Suppose that we have a Vigor value to make the calulations on, this will look like this: (Coefficient * (Vigor + Pre Multiply Additive Value)) + Post Multiply Additive Value
 
 
 
