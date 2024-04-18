@@ -89,7 +89,8 @@ When it comes to the regular Magnitude Magnitude calculation it is fairly simple
 - Adding a moddifier magnitude [Additive_1],
 - then multiplaying by modifier magnitude [Multiplicative_1],
 - and then adding again [Additive_2],
-this will execute in this exact orger of operations:  Health = Health + [Additive_1] = NewHealth, NewHealth = NewHealth * [Multiplicative_1] = NewerHealth, NewerHealth = NewerHealth + [Additive_2] = FinalResult
+  
+this will execute in this exact order of operations:  Health = Health + [Additive_1] = NewHealth, NewHealth = NewHealth * [Multiplicative_1] = NewerHealth, NewerHealth = NewerHealth + [Additive_2] = FinalResult
 
 
 
