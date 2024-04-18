@@ -100,7 +100,8 @@ If we are calculating Attribute Based Modifier we come across few options:
 - Pre Multiply Additive Value,
 - Post Multiply Additive Value.
 
-Suppose that we have a Vigor value to make the calulations on, this will look like this: (Coefficient * (Vigor + Pre Multiply Additive Value)) + Post Multiply Additive Value
+Suppose that we have a Vigor value to make the calulations on, this will look like this: 
+<p style="text-align: center;">**(Coefficient * (Vigor + Pre Multiply Additive Value)) + Post Multiply Additive Value**</p>
 
 
 
