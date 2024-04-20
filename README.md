@@ -100,9 +100,9 @@ If we are calculating Attribute Based Modifier we come across few options:
 - Pre Multiply Additive Value,
 - Post Multiply Additive Value.
 
-Suppose that we have a Vigor value to make the calulations on, this will look like this: 
+Suppose that we have a Health value to make the calulations on, and the backing attribute is Vigor, this will look like this: 
 <p align="center">
-  (Coefficient * (Vigor + Pre Multiply Additive Value)) + Post Multiply Additive Value
+  Health = (Coefficient * (Vigor + Pre Multiply Additive Value)) + Post Multiply Additive Value
 </p>
 
 
