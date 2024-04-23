@@ -12,7 +12,8 @@ Collection of useful information about Unreal Engine game creation. I will (hope
 >    &nbsp;&nbsp;1.2.1 [Gameplay Effect Duration Policies](#gas-gedurationpolicies)  \
 >    &nbsp;&nbsp;1.2.2 [Gameplay Effect's Params](#ge-params) \
 >    &nbsp;&nbsp;1.2.3 [Effect Stacking](#ge-stacking) \
->    &nbsp;&nbsp;1.2.4 [Modifier Order of Operations](#ge-orderofop) 
+>    &nbsp;&nbsp;1.2.4 [Modifier Order of Operations](#ge-orderofop) \
+>    &nbsp;&nbsp;1.2.5 [Gameplay Mod Magnitude Calculation](#ge-orderofop) 
 
 <a name="gas"></a>
 ## 1. Gameplay Ability System
