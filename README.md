@@ -13,7 +13,7 @@ Collection of useful information about Unreal Engine game creation. I will (hope
 >    &nbsp;&nbsp;1.2.2 [Gameplay Effect's Params](#ge-params) \
 >    &nbsp;&nbsp;1.2.3 [Effect Stacking](#ge-stacking) \
 >    &nbsp;&nbsp;1.2.4 [Modifier Order of Operations](#ge-orderofop) \
->    &nbsp;&nbsp;1.2.5 [Gameplay Mod Magnitude Calculation](#ge-orderofop) 
+>    &nbsp;&nbsp;1.2.5 [Gameplay Mod Magnitude Calculation](#ge-modmag) 
 
 <a name="gas"></a>
 ## 1. Gameplay Ability System
@@ -84,7 +84,7 @@ Sources and Targets are simply Ability System Components applying or reciving th
 - **Refresh duration** - if set to this, the gameplay effect becomes infinite (we can manually respond to OnStackCountChange).
 
 <a name="ge-orderofop"></a>
-#### 1.2.3 Modifier Order of Operations
+#### 1.2.4 Modifier Order of Operations
 
 When it comes to the regular Magnitude Magnitude calculation it is fairly simple. The Modifier Op does not matter, only the order of operations, so i we have a Health attribute and a Gameplay Effect that modify Health value by:
 - Adding a moddifier magnitude [Additive_1],
@@ -105,6 +105,9 @@ Suppose that we have a Health value to make the calulations on, and the backing 
 <p align="center">
   Health = (Coefficient * (Vigor + Pre Multiply Additive Value)) + Post Multiply Additive Value
 </p>
+
+<a name="ge-modmag"></a>
+#### 1.2.5 Gameplay Mod Magnitude Calculation
 
 
 
