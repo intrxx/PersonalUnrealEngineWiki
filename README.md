@@ -19,7 +19,7 @@ Collection of useful information about Unreal Engine game creation. I will (hope
 ## 1. Gameplay Ability System
 
 Good Sources:
-- (GAS in Risk of Rain 2)[https://www.vitorcantao.com/post/gas-gameplay-framework/]
+- [GAS in Risk of Rain 2](https://www.vitorcantao.com/post/gas-gameplay-framework/)
 
 <a name="asc"></a>
 ### 1.1 Ability System Component
