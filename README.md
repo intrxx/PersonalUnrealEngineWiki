@@ -22,6 +22,7 @@ Good Sources:
 - [GAS in Risk of Rain 2](https://www.vitorcantao.com/post/gas-gameplay-framework/)
 - [Tranek's GAS Documentation](https://github.com/tranek/GASDocumentation)
 - [Epic's Ability System Q&A](https://epicgames.ent.box.com/s/m1egifkxv3he3u3xezb9hzbgroxyhx89)
+- [DevinSherry's Developer Blog](https://forums.unrealengine.com/t/gameplay-ability-system-course-project-development-blog/1419542)
 
 <a name="asc"></a>
 ### 1.1 Ability System Component
