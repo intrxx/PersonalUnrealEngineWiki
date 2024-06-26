@@ -14,7 +14,8 @@ Collection of useful information about Unreal Engine game creation. I will (hope
 >    &nbsp;&nbsp;2.2.2 [Gameplay Effect's Params](#ge-params) \
 >    &nbsp;&nbsp;2.2.3 [Effect Stacking](#ge-stacking) \
 >    &nbsp;&nbsp;2.2.4 [Modifier Order of Operations](#ge-orderofop) \
->    &nbsp;&nbsp;2.2.5 [Gameplay Mod Magnitude Calculation](#ge-modmag) 
+>    &nbsp;&nbsp;2.2.5 [Gameplay Mod Magnitude Calculation](#ge-modmag) \
+> 3. [User Interface](#ui)   
 
 <a name="general"></a>
 ## 1. General
@@ -122,5 +123,6 @@ Suppose that we have a Health value to make the calulations on, and the backing 
 <a name="ge-modmag"></a>
 #### 2.2.5 Gameplay Mod Magnitude Calculation
 
-
+<a name="ui"></a>
+## 3. User Interface
 
