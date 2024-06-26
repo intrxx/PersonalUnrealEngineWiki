@@ -14,7 +14,7 @@ Collection of useful information about Unreal Engine game creation. I will (hope
 >    &nbsp;&nbsp;2.2.2 [Gameplay Effect's Params](#ge-params) \
 >    &nbsp;&nbsp;2.2.3 [Effect Stacking](#ge-stacking) \
 >    &nbsp;&nbsp;2.2.4 [Modifier Order of Operations](#ge-orderofop) \
->    &nbsp;&nbsp;2.2.5 [Gameplay Mod Magnitude Calculation](#ge-modmag) \
+>    &nbsp;&nbsp;2.2.5 [Gameplay Mod Magnitude Calculation](#ge-modmag)
 > 3. [User Interface](#ui)   
 
 <a name="general"></a>
@@ -126,3 +126,11 @@ Suppose that we have a Health value to make the calulations on, and the backing 
 <a name="ui"></a>
 ## 3. User Interface
 
+Good Sources:
+- [Tech Blog - UMG Best Practices](https://www.unrealengine.com/en-US/tech-blog/umg-best-practices)
+- [Epic - UMG Best Practices](https://dev.epicgames.com/documentation/en-us/unreal-engine/umg-best-practices-in-unreal-engine?application_version=5.4)
+- [UI Best Practices](https://benui.ca/unreal/ui-best-practices/)
+- [Tech Art Chronicles: UMG Tips and Tricks](https://joyrok.com/UMG-Layouts-Tips-and-Tricks)
+- [UMG-Slate Compendium](https://github.com/YawLighthouse/UMG-Slate-Compendium)
+- [UMG Viewmodel](https://dev.epicgames.com/documentation/en-us/unreal-engine/umg-viewmodel?application_version=5.4)
+- [God of War: Ragnarok](https://www.youtube.com/watch?v=C5gfkeFXDq8)
