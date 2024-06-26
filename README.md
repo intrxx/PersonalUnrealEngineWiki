@@ -5,7 +5,7 @@ Collection of useful information about Unreal Engine game creation. I will (hope
 <a name="table-of-contents"></a>
 ## Table of Contents
 
-> 1. [General](#general) \
+> 1. [General](#general)
 > 2. [Gameplay Ability System](#gas) \
 >    &nbsp;2.1 [Ability System Component](#asc) \
 >    &nbsp;&nbsp;2.1.1 [GAS's Replication Modes](#gas-modes) \
