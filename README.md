@@ -15,7 +15,7 @@ Collection of useful information about Unreal Engine game creation. I will (hope
 >    &nbsp;&nbsp;2.2.3 [Effect Stacking](#ge-stacking) \
 >    &nbsp;&nbsp;2.2.4 [Modifier Order of Operations](#ge-orderofop) \
 >    &nbsp;&nbsp;2.2.5 [Gameplay Mod Magnitude Calculation](#ge-modmag) \
->    &nbsp;&nbsp;2.2.6 [Gameplay Effect Execution Calculation](#ge-execcalc) \
+>    &nbsp;&nbsp;2.2.6 [Gameplay Effect Execution Calculation](#ge-execcalc) 
 > 4. [User Interface](#ui)   
 
 <a name="general"></a>
@@ -135,6 +135,10 @@ This comes with few caveats:
 - Capturing Attribute does not run **PreAttributeChange**; any clamping donne there must be done again
 - Only executed on the Server from Gameplay Abilities with: **Local Predicted, Server Initiated and Server Only** Net Execution Policies
 
+**Snapshotting (Source)**
+- Snapshotting - captures the Attribute value when the Gameplay Effect Spec is being created
+- **Not** Snapshotting - captures the Attribute value when the Gameplay Effect is applied
+Example: We are casting a projectile spell that will own a Gameplay Effect Spec that will be later applied to enemy hit. If we use snapshotting here the attributes will be captured while we casting the spell not when we are hitting the enemy.
 
 <a name="ui"></a>
 ## 3. User Interface
