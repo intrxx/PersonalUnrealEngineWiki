@@ -124,6 +124,8 @@ Suppose that we have a Health value to make the calulations on, and the backing 
 <a name="ge-modmag"></a>
 #### 2.2.5 Gameplay Mod Magnitude Calculation
 
+...
+
 <a name="ge-execcalc"></a>
 #### 2.2.5 Gameplay Effect Execution Calculation
 
