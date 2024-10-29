@@ -38,6 +38,9 @@ Regular FName param function:
   void Foo(FName Param);
 ```
 
+![Foo](https://github.com/intrxx/PersonalUnrealEngineWiki/blob/main/ReadMeAssets/FName_Foo.jpg)
+
+
 FName param function with List of FNames:
 
 ```c++
