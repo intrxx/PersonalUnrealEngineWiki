@@ -55,6 +55,9 @@ public:
 
 	UFUNCTION()
 	static TArray<FName> FooParams();
+
+	UPROPERTY(EditDefaultsOnly, meta=(GetOptions = FooParams))
+	FName FooProperty;
 	
 
 protected:
