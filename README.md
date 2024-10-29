@@ -6,7 +6,9 @@ Collection of useful information about Unreal Engine game creation. I will (hope
 ## Table of Contents
 
 > 1. [General](#general)
-> 2. [Gameplay Ability System](#gas) \
+>    &nbsp;1.1 [U-Specifiers](#uspecifiers) \
+>    &nbsp;&nbsp;1.1.1 [FName filters](#fnamefilters) \
+> 3. [Gameplay Ability System](#gas) \
 >    &nbsp;2.1 [Ability System Component](#asc) \
 >    &nbsp;&nbsp;2.1.1 [GAS's Replication Modes](#gas-modes) \
 >    &nbsp;2.2 [Gameplay Effects](#ge) \
@@ -20,6 +22,37 @@ Collection of useful information about Unreal Engine game creation. I will (hope
 
 <a name="general"></a>
 ## 1. General
+
+<a name="uspecifiers"></a>
+### 1.1 U-Specifiers
+
+<a name="gas-modes"></a>
+#### 1.1.1 FName filters
+
+We can specify a list of FNames as the functions params to avoid typos.
+
+Regular FName param function:
+
+```c++
+  UFUNCTION(BlueprintCallable)
+  void Foo(FName Param);
+```
+
+FName param function with List of FNames:
+
+```c++
+  UFUNCTION(BlueprintCallable)
+	void FooWithParams(UPARAM(meta = (GetOptions = FooParams)) FName Param);
+
+  UFUNCTION()
+	static TArray<FName> FooParams();
+
+  TArray<FName> APersonalUEWikiCharacter::FooParams()
+  {
+	static TArray<FName> Params = {"FirstFooParam", "SecondFooParam"};
+	return Params;
+  }
+```
 
 Good Sources:
 - [Unreal Scoops](https://unrealscoops.com/)
