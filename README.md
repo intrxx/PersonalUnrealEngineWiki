@@ -5,7 +5,7 @@ Collection of useful information about Unreal Engine game creation. I will (hope
 <a name="table-of-contents"></a>
 ## Table of Contents
 
-> 1. [General](#general)
+> 1. [General](#general) \
 >    &nbsp;1.1 [U-Specifiers](#uspecifiers) \
 >    &nbsp;&nbsp;1.1.1 [FName filters](#fnamefilters) \
 > 3. [Gameplay Ability System](#gas) \
