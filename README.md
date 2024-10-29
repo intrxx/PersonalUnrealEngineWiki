@@ -80,7 +80,7 @@ We can do it for properties too!
 <a name="gameplaytagsfilters"></a>
 #### 1.1.2 Gameplay Tags Categories
 
-We can filter tags by categories. So usually the problem with gameplay tags is that there too many of them so it is diffucult to navigate in the designer.
+So usually the problem with gameplay tags is that there too many of them so it is diffucult to navigate in the designer.
 
 ```c++
   UFUNCTION(BlueprintCallable)
