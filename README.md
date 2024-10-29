@@ -58,7 +58,9 @@ FName param function with List of FNames:
   }
 ```
 
-![Foo With Params](https://github.com/intrxx/PersonalUnrealEngineWiki/blob/main/ReadMeAssets/FName_FooWithParams.jpg)
+<p align="center">
+  <img src="https://github.com/intrxx/PersonalUnrealEngineWiki/blob/main/ReadMeAssets/FName_FooWithParams.jpg" />
+</p>
 
 We can do it for properties too!
 
@@ -67,7 +69,9 @@ We can do it for properties too!
   FName FooProperty;
 ```
 
-![Foo Property](https://github.com/intrxx/PersonalUnrealEngineWiki/blob/main/ReadMeAssets/FName_FooProperty.jpg)
+<p align="center">
+  <img src="https://github.com/intrxx/PersonalUnrealEngineWiki/blob/main/ReadMeAssets/FName_FooProperty.jpg" />
+</p>
 
 Good Sources:
 - [Unreal Scoops](https://unrealscoops.com/)
