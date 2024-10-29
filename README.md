@@ -7,8 +7,8 @@ Collection of useful information about Unreal Engine game creation. I will (hope
 
 > 1. [General](#general) \
 >    &nbsp;1.1 [U-Specifiers](#uspecifiers) \
->    &nbsp;&nbsp;1.1.1 [FName filters](#fnamefilters) \
->    &nbsp;&nbsp;1.1.2 [Gameplay Tags filters](#gameplaytagsfilters)
+>    &nbsp;&nbsp;1.1.1 [FName Filters](#fnamefilters) \
+>    &nbsp;&nbsp;1.1.2 [Gameplay Tags Categories](#gameplaytagsfilters)
 > 3. [Gameplay Ability System](#gas) \
 >    &nbsp;2.1 [Ability System Component](#asc) \
 >    &nbsp;&nbsp;2.1.1 [GAS's Replication Modes](#gas-modes) \
@@ -31,7 +31,7 @@ Good Sources:
 ### 1.1 U-Specifiers
 
 <a name="fnamefilters"></a>
-#### 1.1.1 FName filters
+#### 1.1.1 FName Filters
 
 We can specify a list of FNames as the functions params to avoid typos.
 
@@ -78,7 +78,7 @@ We can do it for properties too!
 </p>
 
 <a name="gameplaytagsfilters"></a>
-#### 1.1.2 Gameplay Tags filters
+#### 1.1.2 Gameplay Tags Categories
 
 We can filter tags by categories. So usually the problem with gameplay tags is that there too many of them so it is diffucult to navigate in the designer.
 
