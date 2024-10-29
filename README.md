@@ -57,12 +57,16 @@ FName param function with List of FNames:
   }
 ```
 
+![Foo With Params](https://github.com/intrxx/PersonalUnrealEngineWiki/blob/main/ReadMeAssets/FName_FooWithParams.jpg)
+
 We can do it for properties too!
 
 ```c++
   UPROPERTY(EditDefaultsOnly, meta=(GetOptions = FooParams))
   FName FooProperty;
 ```
+
+![Foo Property](https://github.com/intrxx/PersonalUnrealEngineWiki/blob/main/ReadMeAssets/FName_FooProperty.jpg)
 
 Good Sources:
 - [Unreal Scoops](https://unrealscoops.com/)
