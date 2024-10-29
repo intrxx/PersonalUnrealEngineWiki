@@ -54,6 +54,13 @@ FName param function with List of FNames:
   }
 ```
 
+We can do it for properties too!
+
+```c++
+  UPROPERTY(EditDefaultsOnly, meta=(GetOptions = FooParams))
+  FName FooProperty;
+```
+
 Good Sources:
 - [Unreal Scoops](https://unrealscoops.com/)
 
