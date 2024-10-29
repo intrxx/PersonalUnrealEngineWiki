@@ -7,7 +7,7 @@ Collection of useful information about Unreal Engine game creation. I will (hope
 
 > 1. [General](#general) \
 >    &nbsp;1.1 [U-Specifiers](#uspecifiers) \
->    &nbsp;&nbsp;1.1.1 [FName filters](#fnamefilters) \
+>    &nbsp;&nbsp;1.1.1 [FName filters](#fnamefilters) 
 > 3. [Gameplay Ability System](#gas) \
 >    &nbsp;2.1 [Ability System Component](#asc) \
 >    &nbsp;&nbsp;2.1.1 [GAS's Replication Modes](#gas-modes) \
