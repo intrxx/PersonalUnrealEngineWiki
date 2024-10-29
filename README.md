@@ -7,7 +7,8 @@ Collection of useful information about Unreal Engine game creation. I will (hope
 
 > 1. [General](#general) \
 >    &nbsp;1.1 [U-Specifiers](#uspecifiers) \
->    &nbsp;&nbsp;1.1.1 [FName filters](#fnamefilters) 
+>    &nbsp;&nbsp;1.1.1 [FName filters](#fnamefilters) \
+>    &nbsp;&nbsp;1.1.2 [Gameplay Tags filters](#gameplaytagsfilters)
 > 3. [Gameplay Ability System](#gas) \
 >    &nbsp;2.1 [Ability System Component](#asc) \
 >    &nbsp;&nbsp;2.1.1 [GAS's Replication Modes](#gas-modes) \
@@ -22,6 +23,9 @@ Collection of useful information about Unreal Engine game creation. I will (hope
 
 <a name="general"></a>
 ## 1. General
+
+Good Sources:
+- [Unreal Scoops](https://unrealscoops.com/)
 
 <a name="uspecifiers"></a>
 ### 1.1 U-Specifiers
@@ -73,8 +77,29 @@ We can do it for properties too!
   <img src="https://github.com/intrxx/PersonalUnrealEngineWiki/blob/main/ReadMeAssets/FName_FooProperty.jpg" />
 </p>
 
-Good Sources:
-- [Unreal Scoops](https://unrealscoops.com/)
+<a name="gameplaytagsfilters"></a>
+#### 1.1.2 Gameplay Tags filters
+
+We can filter tags by categories. So usually the problem with gameplay tags is that there too many of them so it is diffucult to navigate in the designer.
+
+```c++
+  UFUNCTION(BlueprintCallable)
+  void Tag(FGameplayTag InTag);
+```
+
+We can solve it but providing a category.
+
+```c++
+  UFUNCTION(BlueprintCallable)
+  void TagWithCategory(UPARAM(meta=(Categories="Ability.Cooldown")) FGameplayTag InTag);
+```
+
+And the same thing can be done for properties too.
+
+```c++
+  UPROPERTY(EditDefaultsOnly, meta=(Categories="Ability.Cooldown"))
+  FGameplayTag ExampleTag;
+```
 
 <a name="gas"></a>
 ## 2. Gameplay Ability System
