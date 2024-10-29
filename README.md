@@ -87,6 +87,10 @@ We can filter tags by categories. So usually the problem with gameplay tags is t
   void Tag(FGameplayTag InTag);
 ```
 
+<p align="center">
+  <img src="https://github.com/intrxx/PersonalUnrealEngineWiki/blob/main/ReadMeAssets/WithoutCategory_Tag.jpg" />
+</p>
+
 We can solve it but providing a category.
 
 ```c++
@@ -94,12 +98,20 @@ We can solve it but providing a category.
   void TagWithCategory(UPARAM(meta=(Categories="Ability.Cooldown")) FGameplayTag InTag);
 ```
 
+<p align="center">
+  <img src="https://github.com/intrxx/PersonalUnrealEngineWiki/blob/main/ReadMeAssets/TagWithCategory.jpg" />
+</p>
+
 And the same thing can be done for properties too.
 
 ```c++
   UPROPERTY(EditDefaultsOnly, meta=(Categories="Ability.Cooldown"))
   FGameplayTag ExampleTag;
 ```
+
+<p align="center">
+  <img src="https://github.com/intrxx/PersonalUnrealEngineWiki/blob/main/ReadMeAssets/Category_TagProperty.jpg" />
+</p>
 
 <a name="gas"></a>
 ## 2. Gameplay Ability System
