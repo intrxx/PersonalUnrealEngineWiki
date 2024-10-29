@@ -68,6 +68,14 @@ TArray<FName> APersonalUEWikiCharacter::FooParams()
 	return Params;
 }
 
+void APersonalUEWikiCharacter::Tag(FGameplayTag Tag)
+{
+}
+
+void APersonalUEWikiCharacter::TagWithCategory(FGameplayTag InTag)
+{
+}
+
 void APersonalUEWikiCharacter::BeginPlay()
 {
 	// Call the base class  
