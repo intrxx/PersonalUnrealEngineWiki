@@ -26,7 +26,7 @@ Collection of useful information about Unreal Engine game creation. I will (hope
 <a name="uspecifiers"></a>
 ### 1.1 U-Specifiers
 
-<a name="gas-modes"></a>
+<a name="fnamefilters"></a>
 #### 1.1.1 FName filters
 
 We can specify a list of FNames as the functions params to avoid typos.
@@ -42,10 +42,10 @@ FName param function with List of FNames:
 
 ```c++
   UFUNCTION(BlueprintCallable)
-	void FooWithParams(UPARAM(meta = (GetOptions = FooParams)) FName Param);
+  void FooWithParams(UPARAM(meta = (GetOptions = FooParams)) FName Param);
 
   UFUNCTION()
-	static TArray<FName> FooParams();
+  static TArray<FName> FooParams();
 
   TArray<FName> APersonalUEWikiCharacter::FooParams()
   {
