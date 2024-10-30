@@ -7,8 +7,10 @@ Collection of useful information about Unreal Engine game creation. I will (hope
 
 > 1. [General](#general) \
 >    &nbsp;1.1 [U-Specifiers](#uspecifiers) \
->    &nbsp;&nbsp;1.1.1 [FName filters](#fnamefilters) \
->    &nbsp;&nbsp;1.1.2 [Gameplay Tags filters](#gameplaytagsfilters)
+>    &nbsp;&nbsp;1.1.1 [FName Filters](#fnamefilters) \
+>    &nbsp;&nbsp;1.1.2 [Gameplay Tags Categories](#gameplaytagsfilters) \
+>    &nbsp;1.2 [TArray Allocators](#arrayallocators) \
+>    &nbsp;&nbsp;1.2.1 [TInlineAllocator](#tinlineallocator) 
 > 3. [Gameplay Ability System](#gas) \
 >    &nbsp;2.1 [Ability System Component](#asc) \
 >    &nbsp;&nbsp;2.1.1 [GAS's Replication Modes](#gas-modes) \
@@ -31,15 +33,15 @@ Good Sources:
 ### 1.1 U-Specifiers
 
 <a name="fnamefilters"></a>
-#### 1.1.1 FName filters
+#### 1.1.1 FName Filters
 
 We can specify a list of FNames as the functions params to avoid typos.
 
 Regular FName param function:
 
 ```c++
-  UFUNCTION(BlueprintCallable)
-  void Foo(FName Param);
+  	UFUNCTION(BlueprintCallable)
+  	void Foo(FName Param);
 ```
 
 <p align="center">
@@ -49,17 +51,17 @@ Regular FName param function:
 FName param function with List of FNames:
 
 ```c++
-  UFUNCTION(BlueprintCallable)
-  void FooWithParams(UPARAM(meta = (GetOptions = FooParams)) FName Param);
+  	UFUNCTION(BlueprintCallable)
+  	void FooWithParams(UPARAM(meta = (GetOptions = FooParams)) FName Param);
 
-  UFUNCTION()
-  static TArray<FName> FooParams();
-
-  TArray<FName> APersonalUEWikiCharacter::FooParams()
-  {
-	static TArray<FName> Params = {"FirstFooParam", "SecondFooParam"};
-	return Params;
-  }
+	UFUNCTION()
+	static TArray<FName> FooParams();
+	
+	TArray<FName> APersonalUEWikiCharacter::FooParams()
+	{
+		static TArray<FName> Params = {"FirstFooParam", "SecondFooParam"};
+		return Params;
+	}
 ```
 
 <p align="center">
@@ -69,8 +71,8 @@ FName param function with List of FNames:
 We can do it for properties too!
 
 ```c++
-  UPROPERTY(EditDefaultsOnly, meta=(GetOptions = FooParams))
-  FName FooProperty;
+	UPROPERTY(EditDefaultsOnly, meta=(GetOptions = FooParams))
+	FName FooProperty;
 ```
 
 <p align="center">
@@ -78,27 +80,58 @@ We can do it for properties too!
 </p>
 
 <a name="gameplaytagsfilters"></a>
-#### 1.1.2 Gameplay Tags filters
+#### 1.1.2 Gameplay Tags Categories
 
-We can filter tags by categories. So usually the problem with gameplay tags is that there too many of them so it is diffucult to navigate in the designer.
+So usually the problem with gameplay tags is that there too many of them so it is diffucult to navigate in the designer.
 
 ```c++
-  UFUNCTION(BlueprintCallable)
-  void Tag(FGameplayTag InTag);
+	UFUNCTION(BlueprintCallable)
+	void Tag(FGameplayTag InTag);
 ```
+
+<p align="center">
+  <img src="https://github.com/intrxx/PersonalUnrealEngineWiki/blob/main/ReadMeAssets/WithoutCategory_Tag.jpg" />
+</p>
 
 We can solve it but providing a category.
 
 ```c++
-  UFUNCTION(BlueprintCallable)
-  void TagWithCategory(UPARAM(meta=(Categories="Ability.Cooldown")) FGameplayTag InTag);
+	UFUNCTION(BlueprintCallable)
+	void TagWithCategory(UPARAM(meta=(Categories="Ability.Cooldown")) FGameplayTag InTag);
 ```
+
+<p align="center">
+  <img src="https://github.com/intrxx/PersonalUnrealEngineWiki/blob/main/ReadMeAssets/TagWithCategory.jpg" />
+</p>
 
 And the same thing can be done for properties too.
 
 ```c++
-  UPROPERTY(EditDefaultsOnly, meta=(Categories="Ability.Cooldown"))
-  FGameplayTag ExampleTag;
+	UPROPERTY(EditDefaultsOnly, meta=(Categories="Ability.Cooldown"))
+	FGameplayTag ExampleTag;
+```
+
+<p align="center">
+  <img src="https://github.com/intrxx/PersonalUnrealEngineWiki/blob/main/ReadMeAssets/Category_TagProperty.jpg" />
+</p>
+
+<a name="arrayallocators"></a>
+### 1.2 TArray Allocators
+
+<a name="tinlineallocator"></a>
+#### 1.2.1 TInlineAllocator
+
+TInlineAllocator allows us to allocate a memory space for an array in the same space as the owner of the array. If we create an array with this allocator in function, the memory will be allocated on the stack. This can get us some performance, specially in larger arrays. The interesting thing about TInlineAllocator is that when we exceed the number of elements allocated by it, the program won't crash, it will simply allocate more of it.
+
+```c++
+	TArray<FGenericStruct, TInlineAllocator<1024>> Nodes;
+	for(int32 i = 0; i < 1024; i++)
+	{
+		FGenericStruct& Node = Nodes.AddDefaulted_GetRef();
+		Node.X = 111.0f;
+		Node.Z = 111;
+		Node.Y = 111.0;
+	}
 ```
 
 <a name="gas"></a>
@@ -120,9 +153,9 @@ The ASC defines three replication modes for replicating Gameplay Effects, Gamepl
 Ability System Component is typicaly constructed in the OwnerActor's contructor and explicitly marked as replicated, Replication Mode can be set right after its creation like this:
 
 ```c++
-  AbilitySystemComponent = CreateDefaultSubobject<UObsidianAbilitySystemComponent>(TEXT("AbilitySystemComponent"));
-  AbilitySystemComponent->SetIsReplicated(true);
-  AbilitySystemComponent->SetReplicationMode(EGameplayEffectReplicationMode::OneOfThreeReplicationModes);
+	AbilitySystemComponent = CreateDefaultSubobject<UObsidianAbilitySystemComponent>(TEXT("AbilitySystemComponent"));
+	AbilitySystemComponent->SetIsReplicated(true);
+	AbilitySystemComponent->SetReplicationMode(EGameplayEffectReplicationMode::OneOfThreeReplicationModes);
 ```
 This function takes in EGameplayEffectReplicationMode enum class which is well explain by the below tabel.
 
