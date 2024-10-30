@@ -116,7 +116,7 @@ And the same thing can be done for properties too.
 </p>
 
 <a name="arrayallocators"></a>
-### 1.2. TArray Allocators
+### 1.2 TArray Allocators
 
 <a name="tinlineallocator"></a>
 #### 1.2.1 TInlineAllocator
