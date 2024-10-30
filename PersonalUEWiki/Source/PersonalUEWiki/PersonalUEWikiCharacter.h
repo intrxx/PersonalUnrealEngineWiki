@@ -16,6 +16,13 @@ struct FInputActionValue;
 
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
 
+struct FGenericStruct
+{
+	float X = 0.0f;
+	int32 Z = 0;
+	double Y = 0.0;
+};
+
 UCLASS(config=Game)
 class APersonalUEWikiCharacter : public ACharacter
 {
@@ -52,6 +59,8 @@ public:
 
 	UPROPERTY(EditDefaultsOnly, meta=(Categories="Ability.Cooldown"))
 	FGameplayTag ExampleTag;
+
+	void ArrayAllocators();
 	
 protected:
 

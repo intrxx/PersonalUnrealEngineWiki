@@ -54,6 +54,8 @@ APersonalUEWikiCharacter::APersonalUEWikiCharacter()
 	// are set in the derived blueprint asset named ThirdPersonCharacter (to avoid direct content references in C++)
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 void APersonalUEWikiCharacter::Foo(FName Param)
 {
 }
@@ -75,6 +77,31 @@ void APersonalUEWikiCharacter::Tag(FGameplayTag Tag)
 void APersonalUEWikiCharacter::TagWithCategory(FGameplayTag InTag)
 {
 }
+
+void APersonalUEWikiCharacter::ArrayAllocators()
+{
+	TArray<FGenericStruct, TInlineAllocator<1024>> InlineNodes;
+	for(int32 i = 0; i < 1024; i++)
+	{
+		// This won't crash when allocating more than 1024 elements
+		FGenericStruct& Node = InlineNodes.AddDefaulted_GetRef();
+		Node.X = 111.0f;
+		Node.Z = 111;
+		Node.Y = 111.0;
+	}
+
+	TArray<FGenericStruct, TFixedAllocator<1024>> FixedNodes;
+	for(int32 i = 0; i < 1024; i++)
+	{
+		// This will crash when allocating more than 1024 elements
+		FGenericStruct& Node = FixedNodes.AddDefaulted_GetRef();
+		Node.X = 111.0f;
+		Node.Z = 111;
+		Node.Y = 111.0;
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void APersonalUEWikiCharacter::BeginPlay()
 {
