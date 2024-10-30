@@ -40,8 +40,8 @@ We can specify a list of FNames as the functions params to avoid typos.
 Regular FName param function:
 
 ```c++
-  UFUNCTION(BlueprintCallable)
-  void Foo(FName Param);
+  	UFUNCTION(BlueprintCallable)
+  	void Foo(FName Param);
 ```
 
 <p align="center">
@@ -51,17 +51,17 @@ Regular FName param function:
 FName param function with List of FNames:
 
 ```c++
-  UFUNCTION(BlueprintCallable)
-  void FooWithParams(UPARAM(meta = (GetOptions = FooParams)) FName Param);
+  	UFUNCTION(BlueprintCallable)
+  	void FooWithParams(UPARAM(meta = (GetOptions = FooParams)) FName Param);
 
-  UFUNCTION()
-  static TArray<FName> FooParams();
-
-  TArray<FName> APersonalUEWikiCharacter::FooParams()
-  {
-	static TArray<FName> Params = {"FirstFooParam", "SecondFooParam"};
-	return Params;
-  }
+	UFUNCTION()
+	static TArray<FName> FooParams();
+	
+	TArray<FName> APersonalUEWikiCharacter::FooParams()
+	{
+		static TArray<FName> Params = {"FirstFooParam", "SecondFooParam"};
+		return Params;
+	}
 ```
 
 <p align="center">
@@ -71,8 +71,8 @@ FName param function with List of FNames:
 We can do it for properties too!
 
 ```c++
-  UPROPERTY(EditDefaultsOnly, meta=(GetOptions = FooParams))
-  FName FooProperty;
+	UPROPERTY(EditDefaultsOnly, meta=(GetOptions = FooParams))
+	FName FooProperty;
 ```
 
 <p align="center">
@@ -85,8 +85,8 @@ We can do it for properties too!
 So usually the problem with gameplay tags is that there too many of them so it is diffucult to navigate in the designer.
 
 ```c++
-  UFUNCTION(BlueprintCallable)
-  void Tag(FGameplayTag InTag);
+	UFUNCTION(BlueprintCallable)
+	void Tag(FGameplayTag InTag);
 ```
 
 <p align="center">
@@ -96,8 +96,8 @@ So usually the problem with gameplay tags is that there too many of them so it i
 We can solve it but providing a category.
 
 ```c++
-  UFUNCTION(BlueprintCallable)
-  void TagWithCategory(UPARAM(meta=(Categories="Ability.Cooldown")) FGameplayTag InTag);
+	UFUNCTION(BlueprintCallable)
+	void TagWithCategory(UPARAM(meta=(Categories="Ability.Cooldown")) FGameplayTag InTag);
 ```
 
 <p align="center">
@@ -107,8 +107,8 @@ We can solve it but providing a category.
 And the same thing can be done for properties too.
 
 ```c++
-  UPROPERTY(EditDefaultsOnly, meta=(Categories="Ability.Cooldown"))
-  FGameplayTag ExampleTag;
+	UPROPERTY(EditDefaultsOnly, meta=(Categories="Ability.Cooldown"))
+	FGameplayTag ExampleTag;
 ```
 
 <p align="center">
@@ -153,9 +153,9 @@ The ASC defines three replication modes for replicating Gameplay Effects, Gamepl
 Ability System Component is typicaly constructed in the OwnerActor's contructor and explicitly marked as replicated, Replication Mode can be set right after its creation like this:
 
 ```c++
-  AbilitySystemComponent = CreateDefaultSubobject<UObsidianAbilitySystemComponent>(TEXT("AbilitySystemComponent"));
-  AbilitySystemComponent->SetIsReplicated(true);
-  AbilitySystemComponent->SetReplicationMode(EGameplayEffectReplicationMode::OneOfThreeReplicationModes);
+	AbilitySystemComponent = CreateDefaultSubobject<UObsidianAbilitySystemComponent>(TEXT("AbilitySystemComponent"));
+	AbilitySystemComponent->SetIsReplicated(true);
+	AbilitySystemComponent->SetReplicationMode(EGameplayEffectReplicationMode::OneOfThreeReplicationModes);
 ```
 This function takes in EGameplayEffectReplicationMode enum class which is well explain by the below tabel.
 
