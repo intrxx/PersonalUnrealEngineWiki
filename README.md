@@ -8,7 +8,9 @@ Collection of useful information about Unreal Engine game creation. I will (hope
 > 1. [General](#general) \
 >    &nbsp;1.1 [U-Specifiers](#uspecifiers) \
 >    &nbsp;&nbsp;1.1.1 [FName Filters](#fnamefilters) \
->    &nbsp;&nbsp;1.1.2 [Gameplay Tags Categories](#gameplaytagsfilters)
+>    &nbsp;&nbsp;1.1.2 [Gameplay Tags Categories](#gameplaytagsfilters) \
+>    &nbsp;1.2 [TArray Allocators](#arrayallocators) \
+>    &nbsp;&nbsp;1.2.1 [TInlineAllocator](#tinlineallocator) 
 > 3. [Gameplay Ability System](#gas) \
 >    &nbsp;2.1 [Ability System Component](#asc) \
 >    &nbsp;&nbsp;2.1.1 [GAS's Replication Modes](#gas-modes) \
@@ -112,6 +114,25 @@ And the same thing can be done for properties too.
 <p align="center">
   <img src="https://github.com/intrxx/PersonalUnrealEngineWiki/blob/main/ReadMeAssets/Category_TagProperty.jpg" />
 </p>
+
+<a name="arrayallocators"></a>
+### 1.2. TArray Allocators
+
+<a name="tinlineallocator"></a>
+#### 1.2.1 TInlineAllocator
+
+TInlineAllocator allows us to allocate a memory space for an array in the same space as the owner of the array. If we create an array with this allocator in function, the memory will be allocated on the stack. This can get us some performance, specially in larger arrays. The interesting thing about TInlineAllocator is that when we exceed the number of elements allocated by it, the program won't crash, it will simply allocate more of it.
+
+```c++
+	TArray<FGenericStruct, TInlineAllocator<1024>> Nodes;
+	for(int32 i = 0; i < 1024; i++)
+	{
+		FGenericStruct& Node = Nodes.AddDefaulted_GetRef();
+		Node.X = 111.0f;
+		Node.Z = 111;
+		Node.Y = 111.0;
+	}
+```
 
 <a name="gas"></a>
 ## 2. Gameplay Ability System
