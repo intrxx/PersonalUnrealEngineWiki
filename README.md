@@ -246,6 +246,35 @@ Some use cases:
 <a name="algonamespace"></a>
 #### 1.4.2 Algo Namespace
 
+Collection of some useful functions from Algo namespace in Unreal.
+
+```c++
+	struct Foo
+	{
+		int32 X;
+		int32 Y;
+		int32 Z;
+	};
+
+	TArray<Foo> FooArray = {{1, 2, 3}, {32, 213, 21}, {12, 312, 32}, {1, 6, 2}};
+	Foo* MaxFooByX = Algo::MaxElementBy(FooArray, [](const Foo& FooElem)
+	{
+		return FooElem.X;
+	});
+	
+	TArray<float> FloatyNumbers = {0.0f, 2.0f, 123.321f, 1.321f, 315.21f, 12.0f, 12.235f, 112.21f, 4.32f, 6.42f, 35.42f};
+
+	float* Highest = Algo::MaxElement(FloatyNumbers);
+	float Sum = Algo::Accumulate(FloatyNumbers,0, TPlus<>());
+	Algo::HeapSort(FloatyNumbers);
+	const int32 Index = Algo::BinarySearch(FloatyNumbers, 2.0f);
+	float SearchedForElem = FloatyNumbers[Index];
+	Algo::RandomShuffle(FloatyNumbers);
+	Algo::Reverse(FloatyNumbers);
+	Algo::Rotate(FloatyNumbers, 5);
+	Algo::LowerBound(FloatyNumbers, 12.0f);
+```
+
 <a name="gas"></a>
 ## 2. Gameplay Ability System
 
