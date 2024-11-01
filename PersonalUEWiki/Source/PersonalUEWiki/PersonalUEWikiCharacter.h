@@ -60,7 +60,30 @@ public:
 	UPROPERTY(EditDefaultsOnly, meta=(Categories="Ability.Cooldown"))
 	FGameplayTag ExampleTag;
 
-	void ArrayAllocators();
+	/**
+	 * Array Allocators
+	 */
+	
+	void ArrayAllocatorsWiki();
+
+	/**
+	 * Multithreading
+	 */
+
+	void ParallelForWiki();
+
+	/**
+	 * Deferred code execution
+	 */
+
+	void DeferredCodeExecWiki();
+	void ExampleOne();
+
+	/**
+	 * Algo namespace
+	 */
+
+	void AlgoNamespaceWiki();
 	
 protected:
 
@@ -108,4 +131,3 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	UInputAction* LookAction;
 };
-

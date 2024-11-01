@@ -10,6 +10,8 @@
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "InputActionValue.h"
+#include "Algo/MaxElement.h"
+#include "Algo/RandomShuffle.h"
 
 DEFINE_LOG_CATEGORY(LogTemplateCharacter);
 
@@ -78,7 +80,7 @@ void APersonalUEWikiCharacter::TagWithCategory(FGameplayTag InTag)
 {
 }
 
-void APersonalUEWikiCharacter::ArrayAllocators()
+void APersonalUEWikiCharacter::ArrayAllocatorsWiki()
 {
 	TArray<FGenericStruct, TInlineAllocator<1024>> InlineNodes;
 	for(int32 i = 0; i < 1024; i++)
@@ -101,12 +103,121 @@ void APersonalUEWikiCharacter::ArrayAllocators()
 	}
 }
 
+void APersonalUEWikiCharacter::ParallelForWiki()
+{
+	// Regular For
+
+	TArray<AActor*> RegularAllActors;
+	TArray<AActor*> RegularValidActors;
+	for(AActor* Actor : RegularAllActors)
+	{
+		// Do something
+		
+		RegularValidActors.Add(Actor);
+	}
+
+	// Parallel For
+
+	TArray<AActor*> ParallelAllActors;
+	TQueue<AActor*, EQueueMode::Mpsc> ParallelValidActors;
+	ParallelFor(ParallelAllActors.Num(), [&ParallelValidActors, &ParallelAllActors](int32 Index)
+	{
+		AActor* Actor = ParallelAllActors[Index];
+
+		// Do something
+
+		ParallelValidActors.Enqueue(Actor);
+	});
+
+	TArray<FVector> ParallelAllLocations;
+	TQueue<FVector, EQueueMode::Mpsc> ParallelValidLocations;
+	ParallelFor(ParallelAllLocations.Num(), [&ParallelValidLocations, &ParallelAllLocations](int32 Index)
+	{
+		const FVector& Vector = ParallelAllLocations[Index];
+
+		// Do something
+
+		ParallelValidLocations.Enqueue(Vector);
+	});
+}
+
+void APersonalUEWikiCharacter::DeferredCodeExecWiki()
+{
+	ExampleOne();
+
+	// Example two
+
+	if(true)
+	{
+		ON_SCOPE_EXIT
+		{
+			UE_LOG(LogTemp, Warning, TEXT("World"));	
+		};
+		UE_LOG(LogTemp, Warning, TEXT("Hello"));	
+	}
+	UE_LOG(LogTemp, Warning, TEXT("!"));
+
+	// This might be useful for something like this
+
+	UObject* Ptr;
+	ON_SCOPE_EXIT
+	{
+		delete Ptr;
+	};
+
+	// Any Handle
+	FTimerHandle TimerHandle;
+	ON_SCOPE_EXIT
+	{
+		TimerHandle.Invalidate();
+	};
+}
+
+void APersonalUEWikiCharacter::ExampleOne()
+{
+	ON_SCOPE_EXIT
+	{
+		UE_LOG(LogTemp, Warning, TEXT("World!"));	
+	};
+	UE_LOG(LogTemp, Warning, TEXT("Hello"));	
+}
+
+void APersonalUEWikiCharacter::AlgoNamespaceWiki()
+{
+	struct Foo
+	{
+		int32 X;
+		int32 Y;
+		int32 Z;
+	};
+
+	TArray<Foo> FooArray = {{1, 2, 3}, {32, 213, 21}, {12, 312, 32}, {1, 6, 2}};
+	Foo* MaxFooByX = Algo::MaxElementBy(FooArray, [](const Foo& FooElem)
+	{
+		return FooElem.X;
+	});
+	
+	TArray<float> FloatyNumbers = {0.0f, 2.0f, 123.321f, 1.321f, 315.21f, 12.0f, 12.235f, 112.21f, 4.32f, 6.42f, 35.42f};
+
+	float* Highest = Algo::MaxElement(FloatyNumbers);
+	float Sum = Algo::Accumulate(FloatyNumbers,0, TPlus<>());
+	Algo::HeapSort(FloatyNumbers);
+	const int32 Index = Algo::BinarySearch(FloatyNumbers, 2.0f);
+	float SearchedForElem = FloatyNumbers[Index];
+	Algo::RandomShuffle(FloatyNumbers);
+	Algo::Reverse(FloatyNumbers);
+	Algo::Rotate(FloatyNumbers, 5);
+	Algo::LowerBound(FloatyNumbers, 12.0f);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void APersonalUEWikiCharacter::BeginPlay()
 {
 	// Call the base class  
 	Super::BeginPlay();
+
+	DeferredCodeExecWiki();
 }
 
 //////////////////////////////////////////////////////////////////////////
