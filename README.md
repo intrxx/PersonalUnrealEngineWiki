@@ -14,7 +14,8 @@ Collection of useful information about Unreal Engine game creation. I will (hope
 >    &nbsp;1.3 [Multithreading](#multithreading) \
 >    &nbsp;&nbsp;1.3.1 [Parallel For](#parallelfor) \
 >    &nbsp;1.4 [Misc](#misc) \
->    &nbsp;&nbsp;1.4.1 [On Scope Exit](#onscopeexit)
+>    &nbsp;&nbsp;1.4.1 [On Scope Exit](#onscopeexit) \
+>    &nbsp;&nbsp;1.4.2 [Algo Namespace](#algonamespace)
 > 3. [Gameplay Ability System](#gas) \
 >    &nbsp;2.1 [Ability System Component](#asc) \
 >    &nbsp;&nbsp;2.1.1 [GAS's Replication Modes](#gas-modes) \
@@ -222,7 +223,12 @@ In other languages there is very usfull concept of deffering exectucion to the e
 ```
 
 Result:
+<p align="center">
+  <img src="https://github.com/intrxx/PersonalUnrealEngineWiki/blob/main/ReadMeAssets/onscopeexit.jpg" />
+</p>
 
+<a name="algonamespace"></a>
+#### 1.4.2 Algo Namespace
 
 <a name="gas"></a>
 ## 2. Gameplay Ability System
