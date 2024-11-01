@@ -227,6 +227,22 @@ Result:
   <img src="https://github.com/intrxx/PersonalUnrealEngineWiki/blob/main/ReadMeAssets/onscopeexit.jpg" />
 </p>
 
+Some use cases:
+```c++
+	UObject* Ptr;
+	ON_SCOPE_EXIT
+	{
+		delete Ptr;
+	};
+
+	// Any Handle
+	FTimerHandle TimerHandle;
+	ON_SCOPE_EXIT
+	{
+		TimerHandle.Invalidate();
+	};
+```
+
 <a name="algonamespace"></a>
 #### 1.4.2 Algo Namespace
 
