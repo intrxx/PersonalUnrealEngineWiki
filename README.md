@@ -10,7 +10,9 @@ Collection of useful information about Unreal Engine game creation. I will (hope
 >    &nbsp;&nbsp;1.1.1 [FName Filters](#fnamefilters) \
 >    &nbsp;&nbsp;1.1.2 [Gameplay Tags Categories](#gameplaytagsfilters) \
 >    &nbsp;1.2 [TArray Allocators](#arrayallocators) \
->    &nbsp;&nbsp;1.2.1 [TInlineAllocator](#tinlineallocator) 
+>    &nbsp;&nbsp;1.2.1 [TInlineAllocator](#tinlineallocator) \
+>    &nbsp;1.3 [Multithreading](#multithreading) \
+>    &nbsp;&nbsp;1.3.1 [Parallel For](#parallelfor)
 > 3. [Gameplay Ability System](#gas) \
 >    &nbsp;2.1 [Ability System Component](#asc) \
 >    &nbsp;&nbsp;2.1.1 [GAS's Replication Modes](#gas-modes) \
@@ -133,6 +135,53 @@ TInlineAllocator allows us to allocate a memory space for an array in the same s
 		Node.Y = 111.0;
 	}
 ```
+
+<a name="multithreading"></a>
+### 1.3 Multithreading
+
+<a name="parallelfor"></a>
+#### 1.3.1 Parallel For
+
+In some cases, it might be beneficial to replace regular for loops with ParallelFor to increase performance.
+
+Regular For:
+```c++
+	TArray<AActor*> RegularAllActors;
+	TArray<AActor*> RegularValidActors;
+	for(AActor* Actor : RegularAllActors)
+	{
+		// Do something
+		
+		RegularValidActors.Add(Actor);
+	}
+```
+
+Parallel Fors:
+```c++
+	TArray<AActor*> ParallelAllActors;
+	TQueue<AActor*, EQueueMode::Mpsc> ParallelValidActors;
+	ParallelFor(ParallelAllActors.Num(), [&ParallelValidActors, &ParallelAllActors](int32 Index)
+	{
+		AActor* Actor = ParallelAllActors[Index];
+
+		// Do something
+
+		ParallelValidActors.Enqueue(Actor);
+	});
+
+	TArray<FVector> ParallelAllLocations;
+	TQueue<FVector, EQueueMode::Mpsc> ParallelValidLocations;
+	ParallelFor(ParallelAllLocations.Num(), [&ParallelValidLocations, &ParallelAllLocations](int32 Index)
+	{
+		const FVector& Vector = ParallelAllLocations[Index];
+
+		// Do something
+
+		ParallelValidLocations.Enqueue(Vector);
+	});
+```
+
+But always profile after switching to the loop! It might often lead to a decrease in performance.
 
 <a name="gas"></a>
 ## 2. Gameplay Ability System
