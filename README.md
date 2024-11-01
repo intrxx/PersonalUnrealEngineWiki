@@ -10,7 +10,11 @@ Collection of useful information about Unreal Engine game creation. I will (hope
 >    &nbsp;&nbsp;1.1.1 [FName Filters](#fnamefilters) \
 >    &nbsp;&nbsp;1.1.2 [Gameplay Tags Categories](#gameplaytagsfilters) \
 >    &nbsp;1.2 [TArray Allocators](#arrayallocators) \
->    &nbsp;&nbsp;1.2.1 [TInlineAllocator](#tinlineallocator) 
+>    &nbsp;&nbsp;1.2.1 [TInlineAllocator](#tinlineallocator) \
+>    &nbsp;1.3 [Multithreading](#multithreading) \
+>    &nbsp;&nbsp;1.3.1 [Parallel For](#parallelfor) \
+>    &nbsp;1.4 [Misc](#misc) \
+>    &nbsp;&nbsp;1.4.1 [On Scope Exit](#onscopeexit)
 > 3. [Gameplay Ability System](#gas) \
 >    &nbsp;2.1 [Ability System Component](#asc) \
 >    &nbsp;&nbsp;2.1.1 [GAS's Replication Modes](#gas-modes) \
@@ -133,6 +137,92 @@ TInlineAllocator allows us to allocate a memory space for an array in the same s
 		Node.Y = 111.0;
 	}
 ```
+
+<a name="multithreading"></a>
+### 1.3 Multithreading
+
+<a name="parallelfor"></a>
+#### 1.3.1 Parallel For
+
+In some cases, it might be beneficial to replace regular for loops with ParallelFor to increase performance.
+
+Regular For:
+```c++
+	TArray<AActor*> RegularAllActors;
+	TArray<AActor*> RegularValidActors;
+	for(AActor* Actor : RegularAllActors)
+	{
+		// Do something
+		
+		RegularValidActors.Add(Actor);
+	}
+```
+
+Parallel Fors:
+```c++
+	TArray<AActor*> ParallelAllActors;
+	TQueue<AActor*, EQueueMode::Mpsc> ParallelValidActors;
+	ParallelFor(ParallelAllActors.Num(), [&ParallelValidActors, &ParallelAllActors](int32 Index)
+	{
+		AActor* Actor = ParallelAllActors[Index];
+
+		// Do something
+
+		ParallelValidActors.Enqueue(Actor);
+	});
+
+	TArray<FVector> ParallelAllLocations;
+	TQueue<FVector, EQueueMode::Mpsc> ParallelValidLocations;
+	ParallelFor(ParallelAllLocations.Num(), [&ParallelValidLocations, &ParallelAllLocations](int32 Index)
+	{
+		const FVector& Vector = ParallelAllLocations[Index];
+
+		// Do something
+
+		ParallelValidLocations.Enqueue(Vector);
+	});
+```
+
+But always profile after switching to the loop! It might often lead to a decrease in performance.
+
+<a name="misc"></a>
+### 1.4 Misc
+
+<a name="onscopeexit"></a>
+#### 1.4.1 On Scope Exit
+
+In other languages there is very usfull concept of deffering exectucion to the end of the scope. In rust we have defer, in unreal we use ON_SCOPE_END{}; macro.
+
+```c++
+	void APersonalUEWikiCharacter::ExampleOne()
+	{
+		ON_SCOPE_EXIT
+		{
+			UE_LOG(LogTemp, Warning, TEXT("World!"));	
+		};
+		UE_LOG(LogTemp, Warning, TEXT("Hello"));	
+	}
+
+	void APersonalUEWikiCharacter::DeferredCodeExecWiki()
+	{
+		ExampleOne();
+
+		// Example two
+
+		if(true)
+		{
+			ON_SCOPE_EXIT
+			{
+				UE_LOG(LogTemp, Warning, TEXT("World"));	
+			};
+			UE_LOG(LogTemp, Warning, TEXT("Hello"));	
+		}
+		UE_LOG(LogTemp, Warning, TEXT("!"));
+	}
+```
+
+Result:
+
 
 <a name="gas"></a>
 ## 2. Gameplay Ability System
