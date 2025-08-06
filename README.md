@@ -113,12 +113,19 @@ And the same thing can be done for properties too.
 
 ```c++
 	UPROPERTY(EditDefaultsOnly, meta=(Categories="Ability.Cooldown"))
-	FGameplayTag ExampleTag;
+	FGameplayTag ExampleTag = FGameplayTag::EmptyTag;
 ```
 
 <p align="center">
   <img src="https://github.com/intrxx/PersonalUnrealEngineWiki/blob/main/ReadMeAssets/Category_TagProperty.jpg" />
 </p>
+
+To specify multiple categories use ```,```.
+
+```c++
+	UPROPERTY(EditAnywhere, meta=(Categories = "Item.Slot.Equipment,Item.SwapSlot.Equipment"), Category = "Obsidian|Setup")
+	FGameplayTag SlotTag = FGameplayTag::EmptyTag;
+```
 
 <a name="arrayallocators"></a>
 ### 1.2 TArray Allocators
