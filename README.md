@@ -25,10 +25,10 @@ Collection of useful information about Unreal Engine game creation. I will (hope
 >    &nbsp;&nbsp;2.2.3 [Effect Stacking](#ge-stacking) \
 >    &nbsp;&nbsp;2.2.4 [Modifier Order of Operations](#ge-orderofop) \
 >    &nbsp;&nbsp;2.2.5 [Gameplay Mod Magnitude Calculation](#ge-modmag) \
->    &nbsp;&nbsp;2.2.6 [Gameplay Effect Execution Calculation](#ge-execcalc) \
-> 3. [User Interface](#ui) \
+>    &nbsp;&nbsp;2.2.6 [Gameplay Effect Execution Calculation](#ge-execcalc)
+> 3. [User Interface](#ui) 
 > 4. [Material Editor](#materialeditor) \
->    &nbsp;4.1 [Shortcuts](#me-shortcuts) \ 
+>    &nbsp;4.1 [Shortcuts](#me-shortcuts)  
 
 <a name="general"></a>
 ## 1. General
