@@ -16,7 +16,7 @@ Collection of useful information about Unreal Engine game creation. I will (hope
 >    &nbsp;1.4 [Misc](#misc) \
 >    &nbsp;&nbsp;1.4.1 [On Scope Exit](#onscopeexit) \
 >    &nbsp;&nbsp;1.4.2 [Algo Namespace](#algonamespace)
-> 3. [Gameplay Ability System](#gas) \
+> 2. [Gameplay Ability System](#gas) \
 >    &nbsp;2.1 [Ability System Component](#asc) \
 >    &nbsp;&nbsp;2.1.1 [GAS's Replication Modes](#gas-modes) \
 >    &nbsp;2.2 [Gameplay Effects](#ge) \
@@ -26,7 +26,9 @@ Collection of useful information about Unreal Engine game creation. I will (hope
 >    &nbsp;&nbsp;2.2.4 [Modifier Order of Operations](#ge-orderofop) \
 >    &nbsp;&nbsp;2.2.5 [Gameplay Mod Magnitude Calculation](#ge-modmag) \
 >    &nbsp;&nbsp;2.2.6 [Gameplay Effect Execution Calculation](#ge-execcalc) 
-> 4. [User Interface](#ui)   
+> 3. [User Interface](#ui) \
+> 4. [Material Editor](#materialeditor) \
+>    &nbsp;4.1 [Shortcuts](#me-shortcuts) \ 
 
 <a name="general"></a>
 ## 1. General
@@ -411,3 +413,44 @@ Good Sources:
 - [UMG-Slate Compendium](https://github.com/YawLighthouse/UMG-Slate-Compendium)
 - [UMG Viewmodel](https://dev.epicgames.com/documentation/en-us/unreal-engine/umg-viewmodel?application_version=5.4)
 - [God of War: Ragnarok](https://www.youtube.com/watch?v=C5gfkeFXDq8)
+
+
+<a name="materialeditor"></a>
+## 3. Material Editor
+
+<a name="me-shortcuts"></a>
+### 3.1 Shortcuts
+
+- **Num Key 1** 1 variable constant
+- **Num Key 2** 2 variable constant
+- **Num Key 3** 3 variable constant
+- **Num Key 4** 4 variable constant
+
+- **A key** Add node
+- **B key** BumpOffset node
+- **C key** Mask (R G) node
+- **D key** Divide node
+- **E key** Power node
+- **F key** MaterialFunctionCall
+- **I key** If node
+- **L key** Lerp node (Linear Interpolation)
+- **M key** Multiply node
+- **N key** Normalize node
+- **O key** 1-x node
+- **P key** Panner
+- **R key** Reflection Vector
+- **S key** Param ‘None’ (0) node (Scalar Parameter)
+- **T key** Texture Sample
+- **U key** TexCoord
+- **V key** Param ‘None” (0,1,2,3) (Vector Parameter)
+- **Shift + C key** ComponentMask
+
+
+
+
+
+
+
+
+
+
